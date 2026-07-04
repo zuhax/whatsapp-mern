@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './styles/Header.css'
+import './styles/LandingPageHeader.css'
 
 function Header({ activeNav }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -7,7 +7,7 @@ function Header({ activeNav }) {
     alert("Kamera tidak tersedia.")
   }
   return (
-    <div className="header">
+    <div className="landing-page-header">
       {menuOpen && (
         <div>
           <div className="dropdown-menu">

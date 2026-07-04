@@ -1,4 +1,4 @@
-header {
+.landing-page-header header {
   width: 100%;
   top: 0;
   position: fixed;
@@ -7,18 +7,15 @@ header {
   backdrop-filter: blur(16px);
   background-color: rgba(255,255,255,0.8);
   z-index: 10;
-/*background-color: green;*/
 }
-
-header .top {
+.landing-page-header header .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-block: 12px;
   margin-inline: 12px;
 }
-
-header .camera, header .more-options {
+.landing-page-header header .camera, header .more-options {
   height: 28px;
   width: 28px;
   align-items: center;
@@ -27,8 +24,7 @@ header .camera, header .more-options {
   background-color: transparent;
   font-size: 20px;
 }
-
-header .search {
+.landing-page-header header .search {
   margin-inline: 12px;
   margin-bottom: 8px;
   padding-block: 12px;
@@ -42,7 +38,7 @@ header .search {
 
 /*====================================*/
 
-.header .dropdown-menu {
+.landing-page-header .dropdown-menu {
   position: absolute;
   z-index: 18;
   right: 12px;
@@ -55,8 +51,7 @@ header .search {
   /*padding-block: 12px;*/
   border-radius: 16px;
 }
-
-.header .dropdown-menu button {
+.landing-page-header .dropdown-menu button {
   width: 100%;
   height: auto;
   text-align: left;
@@ -66,15 +61,14 @@ header .search {
   font-size: 14px;
   /*border-bottom: 1px solid gray;*/
 }
-
-.header .dropdown-menu button:last-child {
+.landing-page-header .dropdown-menu button:last-child {
   border-bottom: none;
   padding-bottom: 1rem;
 }
 
 /* ================================ */
 
-.header .transparent-layer {
+.landing-page-header .transparent-layer {
   width: 100dvw;
   height: 100dvh;
   background-color: transparent;
