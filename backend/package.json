@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.4.0"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend using Express",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "author": "",
+  "license": "ISC"
+}

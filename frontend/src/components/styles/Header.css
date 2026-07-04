@@ -1,0 +1,84 @@
+header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(16px);
+  background-color: rgba(255,255,255,0.8);
+  z-index: 10;
+/*background-color: green;*/
+}
+
+header .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 12px;
+  margin-inline: 12px;
+}
+
+header .camera, header .more-options {
+  height: 28px;
+  width: 28px;
+  align-items: center;
+  border-radius: 28px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+header .search {
+  margin-inline: 12px;
+  margin-bottom: 8px;
+  padding-block: 12px;
+  padding-inline: 16px;
+  border-radius: 24px;
+  border: none;
+  background-color: rgba(90,49,5,0.05);
+  outline: none;
+  font-size: 1rem;
+}
+
+/*====================================*/
+
+.header .dropdown-menu {
+  position: absolute;
+  z-index: 18;
+  right: 12px;
+  top: 48px;
+  background-color: rgba(255,255,255, 0.6);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(16px);
+  width: 10rem;
+  height: auto;
+  /*padding-block: 12px;*/
+  border-radius: 16px;
+}
+
+.header .dropdown-menu button {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  padding-inline: 1rem;
+  padding-top: 1rem;
+  background-clip: cyan;
+  font-size: 14px;
+  /*border-bottom: 1px solid gray;*/
+}
+
+.header .dropdown-menu button:last-child {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+/* ================================ */
+
+.header .transparent-layer {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+}

@@ -1,0 +1,69 @@
+.pembaruan-page {
+  margin-top: 64px;
+  margin-inline: 16px;
+}
+
+.pembaruan-page ul .user-add-status {
+  position: relative;
+  margin-top: 12px;
+  width: 88px;
+  height: 144px;
+  background-color: #eeeeee;
+  list-style: none;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(167,167,167);
+  text-align: center;
+  font-size: 12px;
+}
+
+.pembaruan-page ul .user-add-status p {
+  max-width: 50%;
+  margin-bottom: 8px;
+}
+
+.pembaruan-page .user-avatar {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(145,201,255);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: dodgerblue;
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+.pembaruan-page .user-add-status .plus {
+  position: absolute;
+  top: 52px;
+  right: 16px;
+  z-index: 12;
+  background-color: #249d39;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  color: white;
+  box-shadow:  0 0 0 2px #eeeeee;
+}
+
+.pembaruan-page .saluran-header {
+  margin-block: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saluran-header button {
+  padding-inline: 16px;
+  padding-block: 8px;
+  background-color: #eeeeee;
+  border-radius: 16px;
+}
