@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import './styles/LandingPage.css'
+import './styles/HomePage.css'
 
-import LandingPageHeader from '../components/LandingPageHeader.jsx'
+import HomePageHeader from '../components/HomePageHeader.jsx'
 import PembaruanPage from '../pages/PembaruanPage.jsx'
 import ActiveChatPage from '../pages/ActiveChatPage.jsx'
 
@@ -9,7 +9,7 @@ import newChatIcon from '../assets/new-chat-icon.png'
 
 
 
-function LandingPage() {
+function HomePage() {
   const [activeTab, setActiveTab] = useState('semua')
   const [activeNav, setActiveNav] = useState('chat')
   const [activeChat, setActiveChat] = useState(false)
@@ -22,6 +22,7 @@ function LandingPage() {
       lastSeen: "",
       firstName: "Dummy",
       lastName: "Contact 1",
+      fullName: "Dummy Contact 1",
       lastMessage: "cek",
       lastMessageTime: "22.07",
       type: "private",
@@ -37,6 +38,7 @@ function LandingPage() {
       lastSeen: "",
       firstName: "Nayla",
       lastName: "Agitsa",
+      fullName: "Nayla Agitsa",
       lastMessage: "udah",
       lastMessageTime: "22.08",
       type: "private",
@@ -55,9 +57,9 @@ function LandingPage() {
   
   return(
     <div className="app-container">
-      { activeChat ? ( <ActiveChatPage activeChat={activeChat} setActiveChat={setActiveChat} /> ) : (
+      { activeChat ? ( <ActiveChatPage activeChat={activeChat} setActiveChat={setActiveChat} {...availableChats.find( chat => chat.id === activeChat )} /> ) : (
         <div className="landing-page">
-            <LandingPageHeader activeNav={activeNav}/>
+            <HomePageHeader activeNav={activeNav}/>
             { activeNav === 'pembaruan' && <PembaruanPage />}
             { activeNav === 'chat' && (
               <main>
@@ -118,4 +120,4 @@ function LandingPage() {
   )
 }
 
-export default LandingPage
+export default HomePage

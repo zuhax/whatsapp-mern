@@ -4,13 +4,12 @@
   box-sizing: border-box;
   display: flex;
   width: 100dvw;
-  height: 50px;
+  height: 56px;
   background-color: white;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid gray;
 }
-
 .chat-header .back-button {
   width: 20px;
   height: 20px;
@@ -20,12 +19,30 @@
   border-left: 4px solid #0182ff;
   border-bottom: 4px solid #0182ff;
   border-bottom-left-radius: 4px;
-  margin-left: 12px;
+  margin-left: 16px;
 }
-
 .chat-header .avatar {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: gray;
+  margin-inline: 8px;
+}
+.chat-header .avatar-and-contact-info {
+  display: flex;
+  align-items: center;
+}
+.chat-header .name-and-info {
+  display: flex;
+  flex-direction: column;
+}
+.chat-header .left-side {
+  display: flex;
+  align-items: center;
+}
+.chat-header .chat-name {
+  font-size: 1rem;
+}
+.chat-header .network-status {
+  font-size: .9rem;
 }

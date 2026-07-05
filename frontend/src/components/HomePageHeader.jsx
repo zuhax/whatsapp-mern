@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import './styles/LandingPageHeader.css'
+import './styles/HomePageHeader.css'
 
-function Header({ activeNav }) {
+function HomePageHeader({ activeNav }) {
   const [menuOpen, setMenuOpen] = useState(false)
   function cameraAlert() {
     alert("Kamera tidak tersedia.")
@@ -48,4 +48,4 @@ function Header({ activeNav }) {
   )
 }
 
-export default Header
+export default HomePageHeader
