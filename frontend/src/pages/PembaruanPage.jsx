@@ -6,7 +6,7 @@ function PembaruanPage() {
   const [followedChannel, setFollowedChannel] = useState([
     {
       channelId: '00889955337722@ch.id',
-      channelName: 'stciker random',
+      channelName: 'sticker random',
       channelIcon: false,
       channelFollower: 240000,
       isFollowing: true,
@@ -18,7 +18,7 @@ function PembaruanPage() {
     },
     {
       channelId: '00889955337722@ch.id',
-      channelName: 'stciker random',
+      channelName: 'myself',
       channelIcon: false,
       channelFollower: 240000,
       isFollowing: true,
@@ -45,8 +45,11 @@ function PembaruanPage() {
         <h3 className="title">Saluran</h3>
         <button>Jelajahi</button>
       </div>
-      { followedChannel.length === 0 ? (
-        <p>Dapatkan berita terbaru tentang topik yang Anda minati.</p>
+      { followedChannel.length !== 0 ? (
+        <>
+          <p style={{ fontSize: '.9rem', opacity: '60%' }}>Dapatkan berita terbaru tentang topik yang Anda minati.</p>
+          <p style={{ fontSize: '.9rem', opacity: '60%' }}>Temukan saluran untuk diikuti dibawah ini.</p>
+        </>
       ):( followedChannel.map( channel => (
           <ul>
             <li key={ channel.id }>

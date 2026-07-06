@@ -133,7 +133,7 @@
 }
 .landing-page nav button {
   padding-inline: 1rem;
-  padding-block: .8rem;
+  padding-block: 1rem;
   border-radius: 100px;
 }
 .landing-page .active-nav {

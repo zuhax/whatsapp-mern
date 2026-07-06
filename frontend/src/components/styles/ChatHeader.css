@@ -1,14 +1,18 @@
 .chat-header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   display: flex;
-  width: 100dvw;
+  width: 100%;
   height: 56px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
+  backdrop-filter: blur(20px);
 }
 .chat-header .back-button {
   width: 20px;
@@ -16,8 +20,8 @@
   background-color: transparent;
   border: none;
   rotate: 45deg;
-  border-left: 4px solid #0182ff;
-  border-bottom: 4px solid #0182ff;
+  border-left: 3.5px solid #0182ff;
+  border-bottom: 3.5px solid #0182ff;
   border-bottom-left-radius: 4px;
   margin-left: 16px;
 }
@@ -46,3 +50,28 @@
 .chat-header .network-status {
   font-size: .9rem;
 }
+
+/*=====================================*/
+
+.chat-header .right-side {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-right: 16px;
+}
+.chat-header .call-button {
+  display: flex;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+}
+.chat-header .call-button img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(110%);
+}
+
+
+/*=====================================*/

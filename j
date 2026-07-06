@@ -1,0 +1,50 @@
+diff --git a/frontend/src/App.css b/frontend/src/App.css
+index f90339d..e69de29 100644
+--- a/frontend/src/App.css
++++ b/frontend/src/App.css
+@@ -1,184 +0,0 @@
+-.counter {
+-  font-size: 16px;
+-  padding: 5px 10px;
+-  border-radius: 5px;
+-  color: var(--accent);
+-  background: var(--accent-bg);
+-  border: 2px solid transparent;
+-  transition: border-color 0.3s;
+-  margin-bottom: 24px;
+-
+-  &:hover {
+-    border-color: var(--accent-border);
+-  }
+-  &:focus-visible {
+-    outline: 2px solid var(--accent);
+-    outline-offset: 2px;
+-  }
+-}
+-
+-.hero {
+-  position: relative;
+-
+-  .base,
+-  .framework,
+-  .vite {
+-    inset-inline: 0;
+-    margin: 0 auto;
+-  }
+-
+-  .base {
+-    width: 170px;
+-    position: relative;
+-    z-index: 0;
+-  }
+-
+-  .framework,
+-  .vite {
+-    position: absolute;
+-  }
+-
+-  .framework {
+-    z-index: 1;
+-    top: 34px;
+-    height: 28px;
+-    transform: perspective(2000px) rotateZ(300deg) rotat
