@@ -10,6 +10,7 @@ function HomePageHeader({ activeNav }) {
     alert("Kamera tidak tersedia.")
   }
   return (
+    
     <div className="landing-page-header">
       {menuOpen && ( <DropdownMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} buttonList={["Kontak baru", "Perangkat tertaut", "Baca semua", "Pengaturan" ]}/> )}
       <header>
@@ -26,6 +27,23 @@ function HomePageHeader({ activeNav }) {
           { activeNav === 'pembaruan' && (
             <>
               <h2 className="left-side">Pembaruan</h2>
+              <div className="right-side">
+                <button className="camera" onClick={ () => alert('soon') }> <img src={SearchIcon} alt="" style={{ width: '28px', height: '28px' }} /></button>
+                <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
+              </div>
+            </>
+          )}
+          { activeNav === 'komunitas' && (
+            <>
+              <h2 className="left-side">Komunitas</h2>
+              <div className="right-side">
+                <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
+              </div>
+            </>
+          )}
+          { activeNav === 'panggilan' && (
+            <>
+              <h2 className="left-side">Panggilan</h2>
               <div className="right-side">
                 <button className="camera" onClick={ () => alert('soon') }> <img src={SearchIcon} alt="" style={{ width: '28px', height: '28px' }} /></button>
                 <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>

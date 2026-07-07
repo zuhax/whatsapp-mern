@@ -94,9 +94,7 @@ function HomePage() {
                             isReaded={subject.isReaded}
                         />
                       ))
-                    ):(
-                      <p>Hi</p>
-                    )}
+                    ):( <p>Hi</p> )}
                   </ul>
                 )}
                 { activeTab === 'belum-dibaca' && (
