@@ -6,7 +6,7 @@ import PembaruanPage from '../pages/PembaruanPage.jsx'
 import ActiveChatPage from '../pages/ActiveChatPage.jsx'
 
 import newChatIcon from '../assets/new-chat-icon.png'
-
+import CameraIcon from '../assets/camera-icon.png'
 
 
 function HomePage() {
@@ -65,9 +65,9 @@ function HomePage() {
               <main>
                 <div className="filter-tabs">
                   <button onClick={() => setActiveTab('semua')} className={`chip-button ${activeTab === 'semua' ? 'active' : '' }`}>Semua</button>
-                  <button onClick={() => setActiveTab('belum-dibaca')} className={`chip-button ${activeTab === 'belum-dibaca' ? 'active' : '' }`}>Belum dibacaa</button>
-                  <button onClick={() => setActiveTab('bokap')} className={`chip-button ${activeTab === 'bokap' ? 'active' : '' }`}>Bokap</button>
-                  <button onClick={() => setActiveTab('bekep')} className={`chip-button ${activeTab === 'bekep' ? 'active' : '' }`}>Bekep</button>
+                  <button onClick={() => setActiveTab('belum-dibaca')} className={`chip-button ${activeTab === 'belum-dibaca' ? 'active' : '' }`}>Belum dibaca</button>
+                  <button onClick={() => setActiveTab('bokap')} className={`chip-button ${activeTab === 'bokap' ? 'active' : '' }`}>Bokapp</button>
+                  <button onClick={() => setActiveTab('bekep')} className={`chip-button ${activeTab === 'bekep' ? 'active' : '' }`}>Bekepp</button>
                   <button onClick={() => setActiveTab('bokek')} className={`chip-button ${activeTab === 'bokek' ? 'active' : '' }`}>Bokek</button>
                   <button className="chip-button">+</button>
                 </div>
@@ -104,7 +104,8 @@ function HomePage() {
             )}
             <nav>
               <button className="new-chat-button" onClick={()=> alert('segera')}>
-                <img style={{ width: '24px', height: '24px' }} src={newChatIcon} alt="n" />
+                { activeNav === 'chat' && (<img style={{ width: '24px', height: '24px' }} src={newChatIcon} alt="n" />)}
+                { activeNav === 'pembaruan' && (<img style={{ width: '24px', height: '24px', filter: 'saturate(0) brightness(0) invert(1)' }} src={CameraIcon} alt="n" />)}
               </button>
               <div className='slider'>
                 <button className={ activeNav==='chat' ? 'active-nav' : '' } onClick={()=>setActiveNav('chat')}>Chat</button>

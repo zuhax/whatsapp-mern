@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles/HomePageHeader.css'
+import CameraIcon from '../assets/camera-icon.png'
+import SearchIcon from '../assets/search-icon [71B08B4].png'
 
 function HomePageHeader({ activeNav }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -25,7 +27,7 @@ function HomePageHeader({ activeNav }) {
             <>
               <h2 className="left-side app-name">WhatsApp</h2>
               <div className="right-side">
-                <button className="camera" onClick={cameraAlert}>📷</button>
+                <button className="camera" onClick={cameraAlert}><img src={CameraIcon} alt="" style={{ width: "28px", height: "28px" }} /></button>
                 <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
               </div>
             </>
@@ -34,7 +36,7 @@ function HomePageHeader({ activeNav }) {
             <>
               <h2 className="left-side">Pembaruan</h2>
               <div className="right-side">
-                <button className="camera" onClick={ () => alert('soon') }>🔎</button>
+                <button className="camera" onClick={ () => alert('soon') }> <img src={SearchIcon} alt="" style={{ width: '28px', height: '28px' }} /></button>
                 <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
               </div>
             </>
