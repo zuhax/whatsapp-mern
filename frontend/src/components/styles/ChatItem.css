@@ -1,0 +1,35 @@
+ .chat-item .private-chat {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  margin-inline: 12px;
+  margin-bottom: 12px;
+}
+ .chat-item .private-chat .right-side {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+ .chat-item .private-chat .name-n-time {
+  display: flex;
+  justify-content: space-between;
+}
+ .chat-item .private-chat .avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: gray;
+}
+ .app-name {
+  color: #00bd50;
+}
+ .chat-content {
+  display: flex;
+  align-items: center;
+  opacity: 65%;
+}
+ .chat-item .private-chat .time {
+  font-size: .8rem;
+  opacity: 65%;
+}

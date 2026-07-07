@@ -4,14 +4,15 @@ function ChatItem({
   activeChat,
   setActiveChat,
   id,
-  avatar,
+  avatarUrl,
   firstName,
   lastName,
   fullName,
   lastMessage,
+  lastMessageTime,
   lastMessageType,
   isMentioned,
-  isNotReaded
+  isReaded
 }) {
   
   return(

@@ -39,41 +39,7 @@
 
 /*============================*/
 
-.landing-page .private-chat {
-  display: flex;
-  flex: 1;
-  gap: 12px;
-  margin-inline: 12px;
-  margin-bottom: 12px;
-}
-.landing-page .private-chat .right-side {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.landing-page .private-chat .name-n-time {
-  display: flex;
-  justify-content: space-between;
-}
-.landing-page .private-chat .avatar {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: gray;
-}
-.landing-page .app-name {
-  color: #00bd50;
-}
-.landing-page .chat-content {
-  display: flex;
-  align-items: center;
-  opacity: 65%;
-}
-.landing-page .private-chat .time {
-  font-size: .8rem;
-  opacity: 65%;
-}
+
 
 /*============================*/
 

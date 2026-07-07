@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles/HomePage.css'
 
+import ChatItem from '../components/ChatItem.jsx'
 import HomePageHeader from '../components/HomePageHeader.jsx'
 import PembaruanPage from '../pages/PembaruanPage.jsx'
 import ActiveChatPage from '../pages/ActiveChatPage.jsx'
@@ -25,10 +26,12 @@ function HomePage() {
       fullName: "Dummy Contact 1",
       lastMessage: "cek",
       lastMessageTime: "22.07",
+      lastMessageType: "text",
       type: "private",
       archived: false,
       isPinned: false,
       isReaded: true,
+      isMentioned: false,
       newMessagesCount: 1,
     },
     {
@@ -41,10 +44,12 @@ function HomePage() {
       fullName: "Nayla Agitsa",
       lastMessage: "udah",
       lastMessageTime: "22.08",
+      lastMessageType: "text",
       type: "private",
       archived: false,
       isPinned: false,
       isReaded: false,
+      isMentioned: false,
       newMessagesCount: 1,
     }
   ])
@@ -73,23 +78,25 @@ function HomePage() {
                 </div>
                 { activeTab === 'semua' && (
                   <ul className="chat-list">
-                    {
-                      availableChats.length > 0 ? ( availableChats.map( subject => (
-                        <li className="private-chat" key={ subject.id }>
-                          <img className="avatar" src="" alt="" />
-                          <div className="right-side" onClick={() => setActiveChat( subject.id )}>
-                            <div className="name-n-time">
-                              <p className="chat-name">{ subject.firstName + ' ' + subject.lastName}</p>
-                              <p className="time">{ subject.lastMessageTime }</p>
-                            </div>
-                            <p className="chat-content">{ subject.lastMessage }</p>
-                          </div>
-                        </li>
-                        ))
-                      ) : (
-                        <p>NiHao</p>
-                      )
-                    }
+                    { availableChats.length > 0 ? (
+                      availableChats.map( subject => (
+                        <ChatItem activeChat={activeChat}
+                            setActiveChat={setActiveChat}
+                            id={subject.id}
+                            avatarUrl={subject.avatarUrl}
+                            firstName={subject.firstName}
+                            lastName={subject.lastName}
+                            fullName={subject.fullName}
+                            lastMessage={subject.lastMessage}
+                            lastMessageTime={subject.lastMessageTime}
+                            lastMessageType={subject.lastMessageType}
+                            isMentioned={subject.isMentioned}
+                            isReaded={subject.isReaded}
+                        />
+                      ))
+                    ):(
+                      <p>Hi</p>
+                    )}
                   </ul>
                 )}
                 { activeTab === 'belum-dibaca' && (
