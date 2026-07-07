@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './styles/HomePageHeader.css'
 import CameraIcon from '../assets/camera-icon.png'
 import SearchIcon from '../assets/search-icon [71B08B4].png'
+import DropdownMenu from '../components/DropdownMenu.jsx'
 
 function HomePageHeader({ activeNav }) {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -10,22 +11,12 @@ function HomePageHeader({ activeNav }) {
   }
   return (
     <div className="landing-page-header">
-      {menuOpen && (
-        <div>
-          <div className="dropdown-menu">
-            <button>Kontak baru</button>
-            <button>Perangkat tertaut</button>
-            <button>Baca semua</button>
-            <button>Pengaturan</button>
-          </div>
-          <div className="transparent-layer" onClick={() => setMenuOpen(!menuOpen)}></div>
-        </div>
-      )}
+      {menuOpen && ( <DropdownMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} buttonList={["Kontak baru", "Perangkat tertaut", "Baca semua", "Pengaturan" ]}/> )}
       <header>
         <div className="top">
           { activeNav === 'chat' && (
             <>
-              <h2 className="left-side app-name">WhatsApp</h2>
+              <h2 className="left-side app-name" >MrthinusApp</h2>
               <div className="right-side">
                 <button className="camera" onClick={cameraAlert}><img src={CameraIcon} alt="" style={{ width: "28px", height: "28px" }} /></button>
                 <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>

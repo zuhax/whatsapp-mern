@@ -1,0 +1,37 @@
+.dropdown-menu {
+  position: fixed;
+  z-index: 120;
+  right: 12px;
+  top: 48px;
+  background-color: rgba(255,255,255, 0.6);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  backdrop-filter: blur(16px);
+  width: 10rem;
+  height: auto;
+  /*padding-block: 12px;*/
+  border-radius: 16px;
+}
+.dropdown-menu button {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  padding-inline: 1rem;
+  padding-top: 1rem;
+  background-clip: cyan;
+  font-size: 14px;
+  /*border-bottom: 1px solid gray;*/
+}
+.dropdown-menu button:last-of-type {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+/*=======================================*/
+
+.transparent-layer {
+  background-color: transparent;
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  z-index: 100;
+}
