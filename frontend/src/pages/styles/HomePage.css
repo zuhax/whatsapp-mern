@@ -90,17 +90,18 @@
   flex-direction: column;
   width: auto;
   height: auto;
-  /*background-color: rgba(255,255,255,0.7);*/
   position: fixed;
   z-index: 10;
   bottom: 16px;
   align-items: end;
   margin-inline: 7%;
+  pointer-events: none;
 }
 .landing-page nav button {
   padding-inline: 1rem;
   padding-block: 1rem;
   border-radius: 100px;
+  pointer-events: auto;
 }
 .landing-page .active-nav {
   display: flex;

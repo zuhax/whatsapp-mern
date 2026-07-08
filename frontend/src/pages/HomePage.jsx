@@ -3,11 +3,13 @@ import './styles/HomePage.css'
 
 import ChatItem from '../components/ChatItem.jsx'
 import HomePageHeader from '../components/HomePageHeader.jsx'
+
 import PembaruanPage from '../pages/PembaruanPage.jsx'
 import ActiveChatPage from '../pages/ActiveChatPage.jsx'
 
 import newChatIcon from '../assets/new-chat-icon.png'
 import CameraIcon from '../assets/camera-icon.png'
+import CellPhoneIcon from '../assets/voice-call-icon.png' 
 
 
 function HomePage() {
@@ -108,10 +110,24 @@ function HomePage() {
               </main>
             )}
             <nav>
-              <button className="new-chat-button" onClick={()=> alert('segera')}>
-                { activeNav === 'chat' && (<img style={{ width: '24px', height: '24px' }} src={newChatIcon} alt="n" />)}
-                { activeNav === 'pembaruan' && (<img style={{ width: '24px', height: '24px', filter: 'saturate(0) brightness(0) invert(1)' }} src={CameraIcon} alt="n" />)}
-              </button>
+                {
+                  activeNav === 'chat' && (
+                  <button className="new-chat-button" onClick={()=> alert('segera')}>
+                    <img style={{ width: '24px', height: '24px' }} src={newChatIcon} alt="n" />
+                  </button> )
+                }
+                {
+                  activeNav === 'pembaruan' && (
+                  <button className="new-chat-button" onClick={()=> alert('segera')}>
+                    <img style={{ width: '24px', height: '24px', filter: 'saturate(0) brightness(0) invert(1)' }} src={CameraIcon} alt="n" />
+                  </button> )
+                }
+                {
+                  activeNav === 'panggilan' && (
+                  <button className="new-chat-button" onClick={()=> alert('segera')}>
+                    <img style={{ width: '24px', height: '24px', filter: 'saturate(0) brightness(0) invert(1)' }} src={CellPhoneIcon} alt="n" />
+                  </button> )
+                }
               <div className='slider'>
                 <button className={ activeNav==='chat' ? 'active-nav' : '' } onClick={()=>setActiveNav('chat')}>Chat</button>
                 <button className={ activeNav==='pembaruan' ? 'active-nav' : '' } onClick={()=>setActiveNav('pembaruan')}>Pembaruan</button>
