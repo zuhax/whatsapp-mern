@@ -13,19 +13,27 @@ function ChatItem({
   lastMessageTime,
   lastMessageType,
   isMentioned,
-  isReaded
+  isReaded,
+  selectedChatId,
+  setSelectedChatId
 }) {
     
     const hold = useRef(null)
-    const startHold = () => { hold.current = setTimeout(() => { alert("hold detected") }, 500) }
-    const cancelHold = () => clearTimeout(hold.current) 
+    const startHold = (id) => { hold.current = setTimeout(() => { selectedChatId.find( selectedId => selectedId === id ) ? setSelectedChatId(selectedChatId.filter( item => item !== id )) : setSelectedChatId([...selectedChatId, id])}, 300) }
+    const cancelHold = () => { clearTimeout(hold.current) }
     const handleAvatarClick = () => { alert('Avatar clicked') }
     
   return(
-    <div className="chat-item">
+    
+    <div className="chat-item" style={ selectedChatId.find( idList => idList === id ) ? { backgroundColor: 'lightgreen'} : {} }>
       <li className="private-chat" key={ id }>
         <img className="avatar" src={avatarUrl} alt="" onClick={handleAvatarClick} />
-        <div className="right-side" onClick={() => setActiveChat( id )} onTouchStart={startHold} onTouchEnd={cancelHold} >
+        <div className="right-side" onClick={() => { if ( selectedChatId.length > 0 ) {
+          setSelectedChatId([...selectedChatId, id])
+          } else {
+            setActiveChat(id)
+          }
+        }} onTouchStart={() => startHold(id)} onTouchEnd={cancelHold} >
           <div className="name-n-time">
             <p className="chat-name">{`${firstName} ${lastName}`}</p>
             <p className="time">{ lastMessageTime }</p>

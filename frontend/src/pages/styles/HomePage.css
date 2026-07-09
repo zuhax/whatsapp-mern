@@ -1,3 +1,6 @@
+.landing-page {
+  user-select: none;
+}
 .landing-page main {
   margin-block: 100px;
 }

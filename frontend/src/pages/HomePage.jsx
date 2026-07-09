@@ -13,6 +13,7 @@ import CellPhoneIcon from '../assets/voice-call-icon.png'
 
 
 function HomePage() {
+  const [selectedChatId, setSelectedChatId] = useState([])
   const [activeTab, setActiveTab] = useState('semua')
   const [activeNav, setActiveNav] = useState('chat')
   const [activeChat, setActiveChat] = useState(false)
@@ -94,6 +95,8 @@ function HomePage() {
                             lastMessageType={subject.lastMessageType}
                             isMentioned={subject.isMentioned}
                             isReaded={subject.isReaded}
+                            selectedChatId={selectedChatId}
+                            setSelectedChatId={setSelectedChatId}
                         />
                       ))
                     ):( <p>Hi</p> )}

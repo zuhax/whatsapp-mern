@@ -2,8 +2,8 @@
   display: flex;
   flex: 1;
   gap: 12px;
-  margin-inline: 12px;
-  margin-bottom: 12px;
+  padding-inline: 12px;
+  padding-block: 8px;
 }
  .chat-item .private-chat .right-side {
   display: flex;
