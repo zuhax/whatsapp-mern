@@ -13,6 +13,7 @@ import CellPhoneIcon from '../assets/voice-call-icon.png'
 
 
 function HomePage() {
+  const [messageTextValue, setMessageTextValue] = useState(false)
   const [selectedChatId, setSelectedChatId] = useState([])
   const [activeTab, setActiveTab] = useState('semua')
   const [activeNav, setActiveNav] = useState('chat')
@@ -65,7 +66,13 @@ function HomePage() {
   
   return(
     <div className="app-container">
-      { activeChat ? ( <ActiveChatPage activeChat={activeChat} setActiveChat={setActiveChat} {...availableChats.find( chat => chat.id === activeChat )} /> ) : (
+      { activeChat ? ( <ActiveChatPage
+        activeChat={activeChat}
+        setActiveChat={setActiveChat}
+        messageTextValue={messageTextValue}
+        setMessageTextValue={setMessageTextValue}
+        {...availableChats.find( chat => chat.id === activeChat )}/>
+        ) : (
         <div className="landing-page">
             <HomePageHeader activeNav={activeNav}/>
             { activeNav === 'pembaruan' && <PembaruanPage />}

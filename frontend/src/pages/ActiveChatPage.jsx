@@ -2,12 +2,26 @@ import { useState } from 'react'
 import './styles/ActiveChatPage.css'
 import ChatHeader from '../components/ChatHeader.jsx'
 import MessageInputColumn from '../components/MessageInputColumn.jsx'
+import DefaultWallpaperLight from '../assets/default-wallpaper-light.jpg'
 
-function ActiveChatPage({ activeChat, setActiveChat, id, avatarUrl, networkStatus, firstName, lastName, fullName }) {
-  
+function ActiveChatPage({
+    activeChat,
+    setActiveChat,
+    id,
+    avatarUrl,
+    networkStatus,
+    firstName,
+    lastName,
+    fullName,
+    backgroundWallpaper,
+    messageTextValue,
+    setMessageTextValue
+}) {
   return(
     <div className="active-chat-page">
-      <ChatHeader activeChat={activeChat} setActiveChat={setActiveChat}
+      <img className="chat-background-wallpaper" src={DefaultWallpaperLight} alt="" />
+      <ChatHeader
+        activeChat={activeChat} setActiveChat={setActiveChat}
         id={id}
         avatarUrl={avatarUrl}
         networkStatus={networkStatus}
@@ -15,9 +29,13 @@ function ActiveChatPage({ activeChat, setActiveChat, id, avatarUrl, networkStatu
         lastName={lastName}
         fullName={fullName}
       />
-      <main>
+      <main className="chat-bubbles">
+        
       </main>
-      <MessageInputColumn />
+      <MessageInputColumn
+        messageTextValue={messageTextValue}
+        setMessageTextValue={setMessageTextValue}
+      />
     </div>
   )
 }
