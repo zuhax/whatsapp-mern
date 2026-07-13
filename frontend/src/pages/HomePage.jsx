@@ -9,7 +9,8 @@ import ActiveChatPage from '../pages/ActiveChatPage.jsx'
 
 import newChatIcon from '../assets/new-chat-icon.png'
 import CameraIcon from '../assets/camera-icon.png'
-import CellPhoneIcon from '../assets/voice-call-icon.png' 
+import CellPhoneIcon from '../assets/voice-call-icon.png'
+import BigCircleCheckLight from '../assets/check-big-icon-light [3DD819A].png'
 
 
 function HomePage() {
@@ -112,7 +113,7 @@ function HomePage() {
                 )}
                 { activeTab === 'belum-dibaca' && (
                   <div className="tab-belum-dibaca">
-                    <p className="checklist"><span className="inner">✔️</span></p>
+                    <img src={BigCircleCheckLight} alt="" style={{ width: "68px", height: "auto" }} />
                     <h2>Tidak ada obrolan yang belum dibaca</h2>
                     <p>Anda sudah membaca semuanya.</p>
                     <button onClick={()=>setActiveTab('semua')}>Lihat semua chat</button>
