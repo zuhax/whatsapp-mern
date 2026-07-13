@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react'
 import './styles/HomePageHeader.css'
+
 import CameraIcon from '../assets/camera-icon.png'
 import SearchIcon from '../assets/search-icon [71B08B4].png'
-import DropdownMenu from '../components/DropdownMenu.jsx'
+import BackIcon from '../assets/back-button [B061DD2].png'
 
-function HomePageHeader({ activeNav }) {
+import DropdownMenu from '../components/DropdownMenu.jsx'
+import MoreOptionsButton from '../components/buttons/MoreOptionsButton.jsx'
+
+function HomePageHeader({
+  activeNav,
+  selectedChatId,
+  setSelectedChatId
+}) {
   const [menuOpen, setMenuOpen] = useState(false)
   function cameraAlert() {
     alert("Kamera tidak tersedia.")
@@ -17,11 +25,26 @@ function HomePageHeader({ activeNav }) {
         <div className="top">
           { activeNav === 'chat' && (
             <>
-              <h2 className="left-side app-name" >MrthinusApp</h2>
-              <div className="right-side">
-                <button className="camera" onClick={cameraAlert}><img src={CameraIcon} alt="" style={{ width: "28px", height: "28px" }} /></button>
-                <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
-              </div>
+              { selectedChatId.length === 0 ? (
+                <>
+                  <h2 className="left-side app-name">MrthinusApp</h2>
+                  <div className="right-side">
+                    <button className="camera" onClick={cameraAlert}><img src={CameraIcon} alt="" style={{ width: "28px", height: "28px" }} /></button>
+                    <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
+                  </div>
+                </>
+                ):(
+                  <div className="selecting-mode">
+                    <div className="left-side">
+                      <button onClick={() => setSelectedChatId([])}><img src={BackIcon} style={{ width: "32px", height: "auto", transform: "translateY(1px)", filter: "brightness(0)" }}alt="" /></button>
+                      <p>{selectedChatId.length}</p>
+                    </div>
+                    <div className="right-side">
+                      <MoreOptionsButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                    </div>
+                  </div>
+                )
+              }
             </>
           )}
           { activeNav === 'pembaruan' && (

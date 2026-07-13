@@ -28,8 +28,10 @@ function ChatItem({
     <div className="chat-item" style={ selectedChatId.find( idList => idList === id ) ? { backgroundColor: 'lightgreen'} : {} }>
       <li className="private-chat" key={ id }>
         <img className="avatar" src={avatarUrl} alt="" onClick={handleAvatarClick} />
-        <div className="right-side" onClick={() => { if ( selectedChatId.length > 0 ) {
-          setSelectedChatId([...selectedChatId, id])
+        <div className="right-side" onClick={() => { if ( selectedChatId.length > 0 && !selectedChatId.find( itemId => itemId === id ) ) {
+            setSelectedChatId([...selectedChatId, id])
+          } else if ( selectedChatId.find( itemId => itemId === id ) ) {
+            setSelectedChatId(selectedChatId.filter( itemId => itemId !== id ))
           } else {
             setActiveChat(id)
           }

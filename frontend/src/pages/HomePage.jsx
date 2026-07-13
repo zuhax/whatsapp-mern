@@ -18,6 +18,7 @@ function HomePage() {
   const [activeTab, setActiveTab] = useState('semua')
   const [activeNav, setActiveNav] = useState('chat')
   const [activeChat, setActiveChat] = useState(false)
+  const [activePage, setActivePage] = useState("home-page")
   const [availableChats, setAvailableChats] = useState([
     
     {
@@ -74,7 +75,7 @@ function HomePage() {
         {...availableChats.find( chat => chat.id === activeChat )}/>
         ) : (
         <div className="landing-page">
-            <HomePageHeader activeNav={activeNav}/>
+            <HomePageHeader activeNav={activeNav} selectedChatId={selectedChatId} setSelectedChatId={setSelectedChatId} />
             { activeNav === 'pembaruan' && <PembaruanPage />}
             { activeNav === 'chat' && (
               <main>
@@ -139,10 +140,10 @@ function HomePage() {
                   </button> )
                 }
               <div className='slider'>
-                <button className={ activeNav==='chat' ? 'active-nav' : '' } onClick={()=>setActiveNav('chat')}>Chat</button>
-                <button className={ activeNav==='pembaruan' ? 'active-nav' : '' } onClick={()=>setActiveNav('pembaruan')}>Pembaruan</button>
-                <button className={ activeNav==='komunitas' ? 'active-nav' : '' } onClick={()=>setActiveNav('komunitas')}>Komunitas</button>
-                <button className={ activeNav==='panggilan' ? 'active-nav' : '' } onClick={()=>setActiveNav('panggilan')}>Panggilan</button>
+                <button className={ activeNav==='chat' ? 'active-nav' : '' } onClick={()=> { setActiveNav('chat'); setSelectedChatId([]) }}>Chat</button>
+                <button className={ activeNav==='pembaruan' ? 'active-nav' : '' } onClick={()=>{setActiveNav('pembaruan'); setSelectedChatId([])}}>Pembaruan</button>
+                <button className={ activeNav==='komunitas' ? 'active-nav' : '' } onClick={()=>{setActiveNav('komunitas'); setSelectedChatId([])}}>Komunitas</button>
+                <button className={ activeNav==='panggilan' ? 'active-nav' : '' } onClick={()=>{setActiveNav('panggilan'); setSelectedChatId([])}}>Panggilan</button>
               </div>
             </nav>
         </div>

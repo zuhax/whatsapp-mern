@@ -15,12 +15,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.landing-page-header .left-side {
+  margin-left: 12px;
   margin-block: 12px;
-  margin-inline: 12px;
 }
 .landing-page-header .right-side {
   display: flex;
   gap: 12px;
+  margin-right: 12px;
+  margin-block: 12px;
 }
 .landing-page-header header .camera, .landing-page-header header .more-options {
   display: flex;
@@ -57,3 +61,21 @@
 
 /*====================================*/
 
+.landing-page-header .selecting-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 8px;
+  padding-top: 4px;
+}
+.landing-page-header .selecting-mode .left-side {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-left: 4px;
+}
+.landing-page-header .selecting-mode .right-side {
+  margin-right: 24px;
+}
