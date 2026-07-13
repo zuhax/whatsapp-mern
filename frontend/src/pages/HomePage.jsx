@@ -80,7 +80,7 @@ function HomePage() {
             { activeNav === 'pembaruan' && <PembaruanPage />}
             { activeNav === 'chat' && (
               <main>
-                <div className="filter-tabs">
+                <div className="filter-tabs" style={ selectedChatId.length > 0 ? { opacity: "61%", pointerEvents: "none" } : {}}>
                   <button onClick={() => setActiveTab('semua')} className={`chip-button ${activeTab === 'semua' ? 'active' : '' }`}>Semua</button>
                   <button onClick={() => setActiveTab('belum-dibaca')} className={`chip-button ${activeTab === 'belum-dibaca' ? 'active' : '' }`}>Belum dibaca</button>
                   <button onClick={() => setActiveTab('bokap')} className={`chip-button ${activeTab === 'bokap' ? 'active' : '' }`}>Bokapp</button>
