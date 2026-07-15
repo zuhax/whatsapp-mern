@@ -18,9 +18,31 @@ function ChatItem({
   setSelectedChatId
 }) {
     
-    const hold = useRef(null)
-    const startHold = (id) => { hold.current = setTimeout(() => { selectedChatId.find( selectedId => selectedId === id ) ? setSelectedChatId(selectedChatId.filter( item => item !== id )) : setSelectedChatId([...selectedChatId, id])}, 300) }
-    const cancelHold = () => { clearTimeout(hold.current) }
+    const hold = useRef(null);
+    const isLongPress = useRef(false);
+
+    const startHold = (id) => {
+      isLongPress.current = false;
+
+      hold.current = setTimeout(() => {
+        isLongPress.current = true;
+
+        setSelectedChatId(prev =>
+          prev.includes(id)
+            ? prev.filter(item => item !== id)
+            : [...prev, id]
+        );
+
+        hold.current = null;
+      }, 300);
+    };
+
+    const cancelHold = () => {
+      if (hold.current) {
+        clearTimeout(hold.current);
+        hold.current = null;
+      }
+    };
     const handleAvatarClick = () => { alert('Avatar clicked') }
     
   return(
@@ -28,14 +50,25 @@ function ChatItem({
     <div className="chat-item" style={ selectedChatId.find( idList => idList === id ) ? { backgroundColor: 'lightgreen'} : {} }>
       <li className="private-chat" key={ id }>
         <img className="avatar" src={avatarUrl} alt="" onClick={handleAvatarClick} />
-        <div className="right-side" onClick={() => { if ( selectedChatId.length > 0 && !selectedChatId.find( itemId => itemId === id ) ) {
-            setSelectedChatId([...selectedChatId, id])
-          } else if ( selectedChatId.find( itemId => itemId === id ) ) {
-            setSelectedChatId(selectedChatId.filter( itemId => itemId !== id ))
-          } else {
-            setActiveChat(id)
+        <div className="right-side" onClick={() => {
+          if (isLongPress.current) {
+            isLongPress.current = false;
+            return;
           }
-        }} onTouchStart={() => startHold(id)} onTouchEnd={cancelHold} >
+
+          if (selectedChatId.length > 0 && !selectedChatId.includes(id)) {
+            setSelectedChatId(prev => [...prev, id]);
+          } else if (selectedChatId.includes(id)) {
+            setSelectedChatId(prev => prev.filter(itemId => itemId !== id));
+          } else {
+            setActiveChat(id);
+          }
+        }}
+        onTouchStart={() => startHold(id)}
+        onTouchEnd={() => cancelHold()}
+        onMouseDown={() => startHold(id)}
+        onMouseUp={() => cancelHold()}
+        >
           <div className="name-n-time">
             <p className="chat-name">{`${firstName} ${lastName}`}</p>
             <p className="time">{ lastMessageTime }</p>

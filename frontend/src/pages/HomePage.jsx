@@ -84,8 +84,6 @@ function HomePage() {
                   <button onClick={() => setActiveTab('semua')} className={`chip-button ${activeTab === 'semua' ? 'active' : '' }`}>Semua</button>
                   <button onClick={() => setActiveTab('belum-dibaca')} className={`chip-button ${activeTab === 'belum-dibaca' ? 'active' : '' }`}>Belum dibaca</button>
                   <button onClick={() => setActiveTab('bokap')} className={`chip-button ${activeTab === 'bokap' ? 'active' : '' }`}>Bokapp</button>
-                  <button onClick={() => setActiveTab('bekep')} className={`chip-button ${activeTab === 'bekep' ? 'active' : '' }`}>Bekepp</button>
-                  <button onClick={() => setActiveTab('bokek')} className={`chip-button ${activeTab === 'bokek' ? 'active' : '' }`}>Bokek</button>
                   <button className="chip-button">+</button>
                 </div>
                 { activeTab === 'semua' && (
