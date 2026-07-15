@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Backend using Express",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "npx nodemon server.js",
     "start": "node server.js"
   },
   "repository": {
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongodb": "^7.5.0",
     "mongoose": "^9.7.4",
