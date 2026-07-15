@@ -1,11 +1,4 @@
 {
-  "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "mongodb": "^7.5.0",
-    "mongoose": "^9.7.4",
-    "nodemon": "^3.1.14"
-  },
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend using Express",
@@ -19,5 +12,12 @@
     "url": "-"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.5.0",
+    "mongoose": "^9.7.4",
+    "nodemon": "^3.1.14"
+  }
 }
