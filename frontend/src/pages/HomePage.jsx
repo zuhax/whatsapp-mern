@@ -75,7 +75,7 @@ function HomePage() {
         setMessageTextValue={setMessageTextValue}
         {...availableChats.find( chat => chat.id === activeChat )}/>
         ) : (
-        <div className="landing-page">
+        <div className="home-page">
             <HomePageHeader activeNav={activeNav} selectedChatId={selectedChatId} setSelectedChatId={setSelectedChatId} />
             { activeNav === 'pembaruan' && <PembaruanPage />}
             { activeNav === 'chat' && (
