@@ -15,12 +15,6 @@
   display: flex;
   justify-content: space-between;
 }
- .chat-item .private-chat .avatar {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: gray;
-}
  .app-name {
   color: #00bd50;
 }

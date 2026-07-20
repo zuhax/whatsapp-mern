@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import './styles/MessageInputColumn.css'
 
 import StickerIcon from '../assets/sticker-button [518C942].png'

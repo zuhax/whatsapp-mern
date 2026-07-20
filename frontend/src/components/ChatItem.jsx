@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import './styles/ChatItem.css'
+import Avatar from './Avatar.jsx'
 
 function ChatItem({
   activeChat,
@@ -20,23 +21,23 @@ function ChatItem({
     
     const hold = useRef(null);
     const isLongPress = useRef(false);
-
+    
     const startHold = (id) => {
       isLongPress.current = false;
-
+      
       hold.current = setTimeout(() => {
         isLongPress.current = true;
-
+        
         setSelectedChatId(prev =>
           prev.includes(id)
             ? prev.filter(item => item !== id)
             : [...prev, id]
         );
-
+        
         hold.current = null;
       }, 300);
     };
-
+    
     const cancelHold = () => {
       if (hold.current) {
         clearTimeout(hold.current);
@@ -49,13 +50,14 @@ function ChatItem({
     
     <div className="chat-item" style={ selectedChatId.find( idList => idList === id ) ? { backgroundColor: 'lightgreen'} : {} }>
       <li className="private-chat" key={ id }>
-        <img className="avatar" src={avatarUrl} alt="" onClick={handleAvatarClick} />
+        {/*<img className="avatar" src={avatarUrl} alt="" onClick={handleAvatarClick} />*/}
+        <Avatar src={avatarUrl} fullName={fullName} firstName={firstName} />
         <div className="right-side" onClick={() => {
           if (isLongPress.current) {
             isLongPress.current = false;
             return;
           }
-
+          
           if (selectedChatId.length > 0 && !selectedChatId.includes(id)) {
             setSelectedChatId(prev => [...prev, id]);
           } else if (selectedChatId.includes(id)) {
