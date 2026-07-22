@@ -5,10 +5,18 @@ function PhoneNumberInputPage() {
   return (
     <div className="phone-number-input-page">
       <header>
-        <MoreOptionsButton />
+        <div className="left-side">
+        </div>
+        <div className="right-side">
+          <MoreOptionsButton />
+        </div>
       </header>
       <main>
         <h3>Masukkan Nomor Telepon Anda</h3>
+        <p>Masukkan nomor telepon Anda untuk memverifikasi akun WhatsApp.</p>
+        <form>
+          <button></button>
+        </form>
       </main>
     </div>
   );

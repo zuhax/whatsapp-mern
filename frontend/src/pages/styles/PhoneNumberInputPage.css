@@ -1,8 +1,41 @@
 .phone-number-input-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   background-color: #f0f0f0;
+}
+
+.phone-number-input-page header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+}
+
+.phone-number-input-page main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  align-items: center;
+}
+
+.phone-number-input-page main p {
+  font-size: 1rem;
+  max-width: 80%;
+  text-align: center;
+  margin-top: 16px
+}
+
+.phone-number-input-page main form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  width: 80%;
+  height: auto;
+  background-color: green;
+  border-radius: 16px;
 }
