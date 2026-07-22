@@ -32,10 +32,34 @@
 .phone-number-input-page main form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 24px;
   width: 80%;
-  height: auto;
-  background-color: green;
+  height: a;
+  background-color: rgb(183, 192, 200);
   border-radius: 16px;
+  padding: 8px;
+  gap: 4px;
+}
+
+.phone-number-input-page main form button {
+  width: 56px;
+  height: 24px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.phone-number-input-page main form input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: white;
+}
+
+.phone-number-input-page main form input::placeholder {
+  color: white;
+  opacity: 0.7;
 }

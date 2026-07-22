@@ -7,7 +7,7 @@ function LandingPage() {
     const [activePage, setActivePage] = useState('landing');
   return (
     <>
-        { activePage === 'verification' && (<PhoneNumberInputPage />) }
+        { activePage === 'verification' && (<PhoneNumberInputPage activePage={activePage} setActivePage={setActivePage} />) }
         {
             activePage === 'landing' && (
             <div className="landing-page">
