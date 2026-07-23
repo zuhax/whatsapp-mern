@@ -49,7 +49,7 @@ function ChatItem({
   return(
     
     <div className="chat-item" style={ selectedChatId.find( idList => idList === id ) ? { backgroundColor: 'lightgreen'} : {} }>
-      <li className="private-chat" key={ id }>
+      <li className="private-chat">
         {/*<img className="avatar" src={avatarUrl} alt="" onClick={handleAvatarClick} />*/}
         <Avatar src={avatarUrl} fullName={fullName} firstName={firstName} />
         <div className="right-side" onClick={() => {
