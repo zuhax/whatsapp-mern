@@ -92,6 +92,7 @@ function HomePage() {
                       availableChats.map( subject => (
                         <ChatItem activeChat={activeChat}
                             setActiveChat={setActiveChat}
+                            key={subject.id}
                             id={subject.id}
                             avatarUrl={subject.avatarUrl}
                             firstName={subject.firstName}
