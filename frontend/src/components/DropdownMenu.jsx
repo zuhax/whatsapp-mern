@@ -9,7 +9,7 @@ function DropdownMenu({ buttonList, menuOpen, setMenuOpen }) {
     <div>
       <div className="dropdown-menu">
         { buttonList.map( item => (
-          <button onClick={item[1]}>{item[0]}</button>
+          <button className="dropdown-menu-button" onClick={item[1]}>{item[0]}</button>
         ))}
       </div>
       <div className="transparent-layer" onClick={() => setMenuOpen(!menuOpen)}></div>
