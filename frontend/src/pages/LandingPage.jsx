@@ -14,7 +14,9 @@ function LandingPage() {
                 <header>
                     <div className="left-side"></div>
                     <div className="right-side">
-                        <MoreOptionsButton activePage={activePage} setActivePage={setActivePage} />
+                        <MoreOptionsButton buttonList={[
+                          ["Bantuan", () => {}],
+                        ]} />
                     </div>
                 </header>
                 <main>
