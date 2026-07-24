@@ -25,6 +25,8 @@
   gap: 12px;
   margin-right: 12px;
   margin-block: 12px;
+  align-items: center;
+  background-color: red;
 }
 .landing-page-header header .camera, .landing-page-header header .more-options {
   display: flex;

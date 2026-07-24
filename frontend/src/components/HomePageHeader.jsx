@@ -30,7 +30,12 @@ function HomePageHeader({
                   <h2 className="left-side app-name">MrthinusApp</h2>
                   <div className="right-side">
                     <button className="camera" onClick={cameraAlert}><img src={CameraIcon} alt="" style={{ width: "28px", height: "28px" }} /></button>
-                    <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
+                    <MoreOptionsButton buttonList={[
+                      ["Grup baru", () => {}],
+                      ["Komunitas baru", () => {}],
+                      ["Baca semua", () => {}],
+                      ["Pengaturan", () => {}],
+                    ]} />
                   </div>
                 </>
                 ):(
