@@ -22,13 +22,12 @@
 }
 .landing-page-header .right-side {
   display: flex;
-  gap: 12px;
-  margin-right: 12px;
+  gap: 24px;
+  margin-right: 20px;
   margin-block: 12px;
   align-items: center;
-  background-color: red;
 }
-.landing-page-header header .camera, .landing-page-header header .more-options {
+.landing-page-header header .camera {
   display: flex;
   height: 28px;
   width: 28px;
@@ -40,15 +39,11 @@
   font-size: 24px;
   filter: saturate(0) brightness(0);
 }
-.landing-page-header .more-options {
-  transform: translateY(-2px);
-}
 .landing-page-header .camera img {
   width: 280px;
   height: 28px;
 }
 .landing-page-header header .search {
-  
   margin-inline: 12px;
   margin-bottom: 8px;
   padding-block: 12px;
@@ -69,8 +64,8 @@
   justify-content: space-between;
   width: 100%;
   height: 44px;
-  margin-bottom: 8px;
-  padding-top: 4px;
+  margin-bottom: 13px;
+  padding-top: 12px;
 }
 .landing-page-header .selecting-mode .left-side {
   display: flex;
@@ -79,5 +74,5 @@
   margin-left: 4px;
 }
 .landing-page-header .selecting-mode .right-side {
-  margin-right: 24px;
+  margin-right: 20px;
 }

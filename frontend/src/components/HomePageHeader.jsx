@@ -13,14 +13,12 @@ function HomePageHeader({
   selectedChatId,
   setSelectedChatId
 }) {
-  const [menuOpen, setMenuOpen] = useState(false)
   function cameraAlert() {
     alert("Kamera tidak tersedia.")
   }
   return (
     
     <div className="landing-page-header">
-      {menuOpen && ( <DropdownMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} buttonList={["Kontak baru", "Perangkat tertaut", "Baca semua", "Pengaturan" ]}/> )}
       <header>
         <div className="top">
           { activeNav === 'chat' && (
@@ -45,7 +43,11 @@ function HomePageHeader({
                       <p>{selectedChatId.length}</p>
                     </div>
                     <div className="right-side">
-                      <MoreOptionsButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+                      <MoreOptionsButton buttonList={[
+                        ["Tandai belum dibaca", () => {}],
+                        ["Pilih semua", () => {}],
+                        ["Bersihkan obrolan", () => {}],
+                      ]} />
                     </div>
                   </div>
                 )
