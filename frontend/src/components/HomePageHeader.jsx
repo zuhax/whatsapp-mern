@@ -10,8 +10,10 @@ import MoreOptionsButton from '../components/buttons/MoreOptionsButton.jsx'
 
 function HomePageHeader({
   activeNav,
+  activePage,
+  setActivePage,
   selectedChatId,
-  setSelectedChatId
+  setSelectedChatId,
 }) {
   function cameraAlert() {
     alert("Kamera tidak tersedia.")
@@ -32,8 +34,7 @@ function HomePageHeader({
                       ["Grup baru", () => {}],
                       ["Komunitas baru", () => {}],
                       ["Baca semua", () => {}],
-                      ["Pengaturan", () => {}],
-                      ["Test", () => { alert(JSON.stringify(localStorage.getItem('Nayla Agitsa')))}],
+                      ["Pengaturan", () => { setActivePage('settings') }],
                     ]} />
                   </div>
                 </>

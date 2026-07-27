@@ -6,6 +6,7 @@ import HomePageHeader from '../components/HomePageHeader.jsx'
 
 import PembaruanPage from '../pages/PembaruanPage.jsx'
 import ActiveChatPage from '../pages/ActiveChatPage.jsx'
+import SettingsPage from '../pages/SettingsPage.jsx'
 
 import newChatIcon from '../assets/new-chat-icon.png'
 import CameraIcon from '../assets/camera-icon.png'
@@ -19,7 +20,7 @@ function HomePage() {
   const [activeTab, setActiveTab] = useState('semua')
   const [activeNav, setActiveNav] = useState('chat')
   const [activeChat, setActiveChat] = useState(false)
-  const [activePage, setActivePage] = useState("home-page")
+  const [activePage, setActivePage] = useState("home")
   const [availableChats, setAvailableChats] = useState([
     
     {
@@ -68,15 +69,17 @@ function HomePage() {
   
   return(
     <div className="app-container">
-      { activeChat ? ( <ActiveChatPage
+      { activeChat && ( <ActiveChatPage
         activeChat={activeChat}
         setActiveChat={setActiveChat}
         messageTextValue={messageTextValue}
         setMessageTextValue={setMessageTextValue}
         {...availableChats.find( chat => chat.id === activeChat )}/>
-        ) : (
+      )}
+      { activePage == 'settings' && ( <SettingsPage activePage={activePage} setActivePage={setActivePage} /> )}
+      { !activeChat && activePage == 'home' && (
         <div className="home-page">
-            <HomePageHeader activeNav={activeNav} selectedChatId={selectedChatId} setSelectedChatId={setSelectedChatId} />
+            <HomePageHeader setActivePage={setActivePage} activePage={activePage} activeNav={activeNav} selectedChatId={selectedChatId} setSelectedChatId={setSelectedChatId} />
             { activeNav === 'pembaruan' && <PembaruanPage />}
             { activeNav === 'chat' && (
               <main>
