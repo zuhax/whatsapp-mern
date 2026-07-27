@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './styles/PhoneNumberInputPage.css'
 import MoreOptionsButton from '../components/buttons/MoreOptionsButton.jsx'
@@ -9,13 +9,12 @@ import HomePage from './HomePage.jsx'
 
 
 function PhoneNumberInputPage({ activePage, setActivePage }) {
-  
-  
-  
-  const HandleBackButtonClick = () => {
-    setActivePage('landing');
-  }
-  
+
+  const [lastPage, setLastPage] = useState('phone-number')
+  useEffect(() => {
+    localStorage.setItem("last-page", lastPage)
+  }, [lastPage])
+  const HandleBackButtonClick = () => { setActivePage('landing') }
   const [inputCountryCode, setInputCountryCode] = useState("62")
   const countryCodeData = [
     {
@@ -31,7 +30,6 @@ function PhoneNumberInputPage({ activePage, setActivePage }) {
       countryName: "Malaysia"
     },
   ]
-  
   const matchCountryCode = () => {
     if (!inputCountryCode) {
       return "Pilih negara"
@@ -55,7 +53,6 @@ function PhoneNumberInputPage({ activePage, setActivePage }) {
   };
   
   const isPhoneNumberValid = phoneNumber.replace(/\D/g, "").length >= 7;
-  
   const [ isDemoMode, setIsDemoMode ] = useState(false);
   
   return (
@@ -70,7 +67,7 @@ function PhoneNumberInputPage({ activePage, setActivePage }) {
             </div>
             <div className="right-side">
               <MoreOptionsButton buttonList={[
-                ["Mode demo", () => { setIsDemoMode(true); }],
+                ["Mode demo", () => { setIsDemoMode(true); setLastPage('home')}],
                 ["Batal", () => { }],
               ]} />
             </div>

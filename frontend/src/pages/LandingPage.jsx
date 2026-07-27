@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './styles/LandingPage.css'
 import MoreOptionsButton from '../components/buttons/MoreOptionsButton.jsx'
 import PhoneNumberInputPage from './PhoneNumberInputPage.jsx'
+import HomePage from './HomePage.jsx'
 
 function LandingPage() {
     const [activePage, setActivePage] = useState('landing');
+    useEffect(() => {
+      const lastPage = localStorage.getItem("last-page")
+      if (lastPage === 'home') { setActivePage('home') }
+    }, [])
   return (
     <>
+        { activePage === 'home' && (<HomePage />) }
         { activePage === 'verification' && (<PhoneNumberInputPage activePage={activePage} setActivePage={setActivePage} />) }
-        {
-            activePage === 'landing' && (
+        { activePage === 'landing' && (
             <div className="landing-page">
                 <header>
                     <div className="left-side"></div>

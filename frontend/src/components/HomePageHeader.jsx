@@ -33,6 +33,7 @@ function HomePageHeader({
                       ["Komunitas baru", () => {}],
                       ["Baca semua", () => {}],
                       ["Pengaturan", () => {}],
+                      ["Test", () => { alert(JSON.stringify(localStorage.getItem('Nayla Agitsa')))}],
                     ]} />
                   </div>
                 </>
@@ -59,7 +60,11 @@ function HomePageHeader({
               <h2 className="left-side">Pembaruan</h2>
               <div className="right-side">
                 <button className="camera" onClick={ () => alert('soon') }> <img src={SearchIcon} alt="" style={{ width: '28px', height: '28px' }} /></button>
-                <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
+                <MoreOptionsButton buttonList={[
+                  ["Buat saluran", () => {}],
+                  ["Privasi status", () => {}],
+                  ["Pengaturan", () => {}],
+                ]} />
               </div>
             </>
           )}
@@ -67,7 +72,9 @@ function HomePageHeader({
             <>
               <h2 className="left-side">Komunitas</h2>
               <div className="right-side">
-                <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
+								<MoreOptionsButton buttonList={[
+									["Pengaturan", () => {}]
+								]} />
               </div>
             </>
           )}
@@ -76,8 +83,11 @@ function HomePageHeader({
               <h2 className="left-side">Panggilan</h2>
               <div className="right-side">
                 <button className="camera" onClick={ () => alert('soon') }> <img src={SearchIcon} alt="" style={{ width: '28px', height: '28px' }} /></button>
-                <button className="more-options" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
-              </div>
+								<MoreOptionsButton buttonList={[
+									["Bersihkan log menelpon", () => {}],
+									["Pengaturan", () => {}],
+								]} />
+							</div>
             </>
           )}
         </div>
