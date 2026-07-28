@@ -7,6 +7,7 @@ import HomePageHeader from '../components/HomePageHeader.jsx'
 import PembaruanPage from '../pages/PembaruanPage.jsx'
 import ActiveChatPage from '../pages/ActiveChatPage.jsx'
 import SettingsPage from '../pages/SettingsPage.jsx'
+import SelectContactPage from '../pages/SelectContactPage'
 
 import newChatIcon from '../assets/new-chat-icon.png'
 import CameraIcon from '../assets/camera-icon.png'
@@ -77,6 +78,7 @@ function HomePage() {
         {...availableChats.find( chat => chat.id === activeChat )}/>
       )}
       { activePage == 'settings' && ( <SettingsPage activePage={activePage} setActivePage={setActivePage} /> )}
+      { activePage == 'select-contact' && ( <SelectContactPage activePage={activePage} setActivePage={setActivePage} /> )}
       { !activeChat && activePage == 'home' && (
         <div className="home-page">
             <HomePageHeader setActivePage={setActivePage} activePage={activePage} activeNav={activeNav} selectedChatId={selectedChatId} setSelectedChatId={setSelectedChatId} />
@@ -126,7 +128,7 @@ function HomePage() {
             <nav>
                 {
                   activeNav === 'chat' && (
-                  <button className="new-chat-button" onClick={()=> alert('segera')}>
+                  <button className="new-chat-button" onClick={()=> setActivePage('select-contact')}>
                     <img style={{ width: '24px', height: '24px' }} src={newChatIcon} alt="n" />
                   </button> )
                 }

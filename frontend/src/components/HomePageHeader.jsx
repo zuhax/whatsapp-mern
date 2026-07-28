@@ -64,7 +64,7 @@ function HomePageHeader({
                 <MoreOptionsButton buttonList={[
                   ["Buat saluran", () => {}],
                   ["Privasi status", () => {}],
-                  ["Pengaturan", () => {}],
+                  ["Pengaturan", () => { setActivePage('settings') }],
                 ]} />
               </div>
             </>
@@ -74,7 +74,7 @@ function HomePageHeader({
               <h2 className="left-side">Komunitas</h2>
               <div className="right-side">
 								<MoreOptionsButton buttonList={[
-									["Pengaturan", () => {}]
+									["Pengaturan", () => { setActivePage('settings') }]
 								]} />
               </div>
             </>
@@ -86,7 +86,7 @@ function HomePageHeader({
                 <button className="camera" onClick={ () => alert('soon') }> <img src={SearchIcon} alt="" style={{ width: '28px', height: '28px' }} /></button>
 								<MoreOptionsButton buttonList={[
 									["Bersihkan log menelpon", () => {}],
-									["Pengaturan", () => {}],
+									["Pengaturan", () => { setActivePage('settings') }],
 								]} />
 							</div>
             </>
