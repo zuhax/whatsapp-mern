@@ -13,7 +13,7 @@ function SettingsPage({ activePage, setActivePage }) {
     new SettingsButton({ icon: '', title: 'Privasi', subtitle: 'Akun diblokir, pesan sementara'}),
     new SettingsButton({ icon: '', title: 'Daftar', subtitle: 'Kelola orang dan grup'}),
     new SettingsButton({ icon: '', title: 'Chat', subtitle: 'Tema, wallpaper, riwayat obrolan'}),
-    new SettingsButton({ icon: '', title: 'Tampilan', subtitle: 'Tema obrolan, ikon aplikasi, tema aplikas8'}),
+    new SettingsButton({ icon: '', title: 'Tampilan', subtitle: 'Tema obrolan, ikon aplikasi, tema aplikasi'}),
   ]
   return (
     <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#e9e9e4', width: '100%', height: '100dvh' }} className="settings-page-container">

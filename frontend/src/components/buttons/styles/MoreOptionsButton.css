@@ -1,6 +1,9 @@
 .more-options-button-container button {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: fit;
+  justify-content: center;
 }

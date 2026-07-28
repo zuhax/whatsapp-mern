@@ -12,7 +12,7 @@ function DropdownMenu({ buttonList, menuOpen, setMenuOpen }) {
           <button className="dropdown-menu-button" onClick={item[1]}>{item[0]}</button>
         ))}
       </div>
-      <div className="transparent-layer" onClick={() => setMenuOpen(!menuOpen)}></div>
+      <div style={{ }} className="transparent-layer" onClick={() => setMenuOpen(!menuOpen)}></div>
     </div>
   )
 }
