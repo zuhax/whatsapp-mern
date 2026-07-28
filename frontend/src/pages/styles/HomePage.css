@@ -125,7 +125,7 @@
     align-items: center;
     margin-bottom: 20px;
   }
-@media (min-width: 768px) {
+@media (min-width: 532px) {
   .home-page nav {
     display: flex;
     flex-direction: row;
