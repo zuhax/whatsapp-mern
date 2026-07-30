@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
   res.send({ status: 'hello there' })
 })
 
-app.listen(3000, () => {
-  console.log('server nyala')
+app.listen(process.env.PORT, () => {
+  console.log(`SERVER RUNNING ON PORT ${process.env.PORT}`)
 })
